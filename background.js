@@ -1,7 +1,8 @@
 const OPENAI_KEY = "INSERT ME";
-const GPT_MODEL = "gpt-4-vision-preview"
+const GPT_VISION_MODEL = "gpt-4-vision-preview"
+const GPT_TEXT_MODEL = "gpt-3.5-turbo-1106"
 // Longer messages are not read out by Meta Glasses, play with this number if needed
-const GPT_REPONSE_WORD_LIMIT = "20"
+const GPT_REPONSE_CHARACTER_LIMIT = "100"
 
 const FB_API_VERSION = "v18.0"
 // The ID of your FB Page with which you your main FB Account has started a chat with
@@ -25,13 +26,13 @@ async function getGPTResponse(query) {
 
     console.log(`Requesting ChatGPT data for query: ${query}`);
     gpt_query_body = {
-        'model': GPT_MODEL,
+        'model': temporaryImageUrlStorage == null ? GPT_TEXT_MODEL : GPT_VISION_MODEL,
         'messages': [
             {
                 'role': 'user',
                 'content': [
                     {
-                        type: "text", text: `Limit your response to ${GPT_REPONSE_WORD_LIMIT} words. ${query}`
+                        type: "text", text: `Limit your response to ${GPT_REPONSE_CHARACTER_LIMIT} characters for this query: ${query}`
                     },
                 ]
             }
