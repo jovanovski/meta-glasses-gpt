@@ -131,8 +131,9 @@ if (isset($_GET['hub_challenge'])) {
 } else {
     $json = file_get_contents('php://input');
 
-    // Uncomment the following line if you need to read the incoming data from the Whastapp webhook
+    // Uncomment the following lines if you need to read the incoming data from the Whastapp webhook
     // file_put_contents("debug.txt", $json);
+    // die();
 
     $json = json_decode($json);
 
