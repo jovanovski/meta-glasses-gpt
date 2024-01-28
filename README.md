@@ -1,2 +1,5 @@
 # ChatGPT for Meta Smart Glasses
-Welcome, please read this post for the whole tutorial, this code is for the browser extension that will make this work: https://jovanovski.medium.com/3c804801447b
+This is part of a tutorial on how to get ChatGPT on Meta Smart Glasses.
+
+- For the less complicated approach using Whatsapp, read this: [https://jovanovski.medium.com/3c804801447b](https://jovanovski.medium.com/3c804801447b)
+- For the more complicated approach with Messenger, read this: [https://jovanovski.medium.com/3c804801447b](https://jovanovski.medium.com/3c804801447b)
