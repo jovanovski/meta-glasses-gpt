@@ -130,7 +130,12 @@ if (isset($_GET['hub_challenge'])) {
     echo ($_GET['hub_challenge']);
 } else {
     $json = file_get_contents('php://input');
+
+    // Uncomment the following line if you need to read the incoming data from the Whastapp webhook
+    // file_put_contents("debug.txt", $json);
+
     $json = json_decode($json);
+
     $message = $json->entry[0]->changes[0]->value->messages[0];
     if ($message->from == WHATSAPP_INCOMING_PHONE_NUMBER) {
         if ($message->type == "text") {
