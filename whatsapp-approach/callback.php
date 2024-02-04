@@ -54,7 +54,7 @@ function sendWhatsappResponse($response)
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS => '{"messaging_product": "whatsapp", "to": "38971545369","text": {"body" : "' . $response . '"}}',
+        CURLOPT_POSTFIELDS => '{"messaging_product": "whatsapp", "to": "' . WHATSAPP_INCOMING_PHONE_NUMBER . '","text": {"body" : "' . $response . '"}}',
         CURLOPT_HTTPHEADER => array(
             'Authorization: Bearer ' . WHATSAPP_TOKEN,
             'Content-Type: application/json'
